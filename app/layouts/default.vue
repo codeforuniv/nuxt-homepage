@@ -48,7 +48,12 @@
       >
         <v-icon>mdi-minus</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title" />
+      <a href="/">
+        <img
+          src="/logo-wide.png"
+          width=160px
+        >
+      </a>
       <v-spacer />
       <v-btn
         icon
@@ -97,14 +102,19 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Home',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'i',
+          title: 'About',
+          to: '/about'
         }
       ],
       miniVariant: false,

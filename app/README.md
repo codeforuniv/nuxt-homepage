@@ -20,3 +20,9 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+# mdi-icon
+サイドバーに表示するアイコン
+https://material.io/resources/icons/?style=baseline
+
