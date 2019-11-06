@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build: ./app
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/app
+    command: ash -c "npm install && npm run dev"
+    stdin_open: true
+    tty: true
