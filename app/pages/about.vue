@@ -29,3 +29,7 @@
     </v-flex>
   </v-layout>
 </template>
+
+<style lang="sass" scoped>
+
+</style>
