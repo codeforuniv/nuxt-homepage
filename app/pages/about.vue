@@ -1,5 +1,5 @@
 <template>
-   <v-layout wrap>
+  <v-layout wrap>
     <v-flex class="text-center">
       <img
         src="/logo.png"
@@ -11,7 +11,7 @@
     </v-flex>
     <v-flex class="text-center">
       <a href="https://twitter.com/codeforuniv" target="_blank" class="sns-link">
-        <i class="fab twitter-icon"></i>
+        <i class="fab twitter-icon" />
       </a>
       <iframe
         src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FCode-for-University-103516374334392&width=450&layout=standard&action=like&size=large&show_faces=true&share=true&height=80&appId"
@@ -21,8 +21,8 @@
         scrolling="no"
         frameborder="0"
         allowTransparency="true"
-        allow="encrypted-media">
-      </iframe>
+        allow="encrypted-media"
+      />
       <footer>
         <div>©️ 2019 Code for University</div>
       </footer>

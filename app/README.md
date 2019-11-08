@@ -21,6 +21,9 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+## ファイルの整形
+`npm run lint` : 修正箇所表示
+`npm run lint -- --fix` : 自動修正
 
 ## mdi-icon
 サイドバーに表示するアイコン

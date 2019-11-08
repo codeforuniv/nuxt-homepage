@@ -51,7 +51,7 @@
       <a href="/">
         <img
           src="/logo-wide.png"
-          width=160px
+          width="160px"
         >
       </a>
       <v-spacer />
