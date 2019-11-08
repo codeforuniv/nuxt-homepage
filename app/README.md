@@ -22,7 +22,10 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 
-# mdi-icon
+## mdi-icon
 サイドバーに表示するアイコン
 https://material.io/resources/icons/?style=baseline
+
+## nuxtの環境構築で役立ったサイト
+https://qiita.com/amishiro/items/1c2a009cb0470cf3223a
 
