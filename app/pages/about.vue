@@ -24,7 +24,7 @@
         allow="encrypted-media">
       </iframe>
       <footer>
-        <div class="copyright-box">©️ 2019 Code for University</div>
+        <div>©️ 2019 Code for University</div>
       </footer>
     </v-flex>
   </v-layout>
