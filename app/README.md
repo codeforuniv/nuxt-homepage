@@ -32,3 +32,5 @@ https://material.io/resources/icons/?style=baseline
 ## nuxtの環境構築で役立ったサイト
 https://qiita.com/amishiro/items/1c2a009cb0470cf3223a
 
+## vuefileのtemplateのなかはdivで囲わないといけない
+https://teratail.com/questions/76655
