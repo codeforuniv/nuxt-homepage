@@ -11,7 +11,7 @@
 nuxt + vuetify + GCP + Docker (DB未定)
 
 ## gitの心得！！
-1. 始める前にpull!!
+1. 始める前にdevelopに移動してdevelopをpull!!
 1. 他の人と作業が被りそうだったらcheckout!!
 1. がんがんadd！！
 1. こまめにcommit!!
