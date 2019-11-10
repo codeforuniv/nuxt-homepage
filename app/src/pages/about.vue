@@ -5,6 +5,9 @@
         src="/logo.png"
         width="200px"
       >
+      <h1 class="tagline">
+        大学 × 市民社会 × テクノロジーは未来を変える
+      </h1>
       <blockquote class="blockquote">
         Code for Univ.(University)は大学に対してみなさんが抱いている想いを、 想いのまま終わらせずITやネットワーキングを通じて実際の課題解決にコミットするためのシビックテックコミュニティです。
       </blockquote>
@@ -31,5 +34,6 @@
 </template>
 
 <style lang="sass" scoped>
-
+.tagline
+  padding: 20px
 </style>
