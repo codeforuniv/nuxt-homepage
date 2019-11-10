@@ -115,6 +115,11 @@ export default {
           icon: 'i',
           title: 'About',
           to: '/about'
+        },
+        {
+          icon: 'mdi-alien-outline',
+          title: 'Test',
+          to: '/test'
         }
       ],
       miniVariant: false,
