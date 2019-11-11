@@ -3,19 +3,20 @@
     <v-row no-gutters>
       <Carousel />
     </v-row>
-    <v-row class="text-center">
+    <v-row
+      justify="center"
+    >
       <img
         src="/logo.png"
         width="200px"
       >
-      <h1 class="tagline">
-        大学 × 市民社会 × テクノロジーは未来を変える
-      </h1>
       <blockquote class="blockquote">
         Code for Univ.(University)は大学に対してみなさんが抱いている想いを、 想いのまま終わらせずITやネットワーキングを通じて実際の課題解決にコミットするためのシビックテックコミュニティです。
       </blockquote>
     </v-row>
-    <v-row class="text-center">
+    <v-row
+      justify="center"
+    >
       <a href="https://twitter.com/codeforuniv" target="_blank" class="sns-link">
         <i class="fab twitter-icon" />
       </a>
@@ -29,6 +30,10 @@
         allowTransparency="true"
         allow="encrypted-media"
       />
+    </v-row>
+    <v-row
+      justify="center"
+    >
       <footer>
         <div>©️ 2019 Code for University</div>
       </footer>
@@ -48,6 +53,4 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.tagline
-  padding: 20px
 </style>
