@@ -1,9 +1,7 @@
 <template>
   <div>
-    <v-row>
-      <v-col cols="12">
-        <Carousel />
-      </v-col>
+    <v-row no-gutters>
+      <Carousel />
     </v-row>
     <v-row class="text-center">
       <img

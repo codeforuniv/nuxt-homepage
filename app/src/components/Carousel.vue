@@ -2,16 +2,16 @@
   <v-carousel
     height="auto"
     cycle
+    show-arrows-on-hover
+    hide-delimiter-background
   >
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
     >
-      <img
+      <v-img
         :src="item.src"
-        width="800px"
-        height="auto"
-      >
+      ></v-img>
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -37,6 +37,4 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.v-carousel
-  width: 100%
 </style>
