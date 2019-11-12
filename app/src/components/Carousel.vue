@@ -15,7 +15,9 @@
           align="center"
           justify="center"
         >
-          <p class="tagline display-1">{{ item.text }}</p>
+          <p class="tagline display-1">
+            {{ item.text }}
+          </p>
         </v-row>
       </v-img>
     </v-carousel-item>
