@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="pa-0" fluid>
-      <v-row no-gutters>
+      <v-row>
         <Carousel />
       </v-row>
     </v-container>
@@ -9,7 +9,10 @@
       <v-row>
         <p class="display-1 font-weight-black red--text">RECENT NEWS</p>
       </v-row>
-      <v-row class="blue-grey lighten-5 pa-5">
+      <v-row class="pa-5">
+        <NewsCard />
+        <NewsCard />
+        <NewsCard />
       </v-row>
     </v-container>
     <v-container>
@@ -107,11 +110,13 @@
 
 <script>
 import Carousel from '@/components/Carousel.vue'
+import NewsCard from '@/components/NewsCard.vue'
 
 export default {
   name: 'Home',
   components: {
-    Carousel
+    Carousel,
+    NewsCard
   }
 }
 </script>

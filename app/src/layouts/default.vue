@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-app-bar
+      class="clear"
       :clipped-left="clipped"
       fixed
       app
@@ -45,10 +46,7 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
+    <v-footer>
       <span>&copy; 2019 Code for University</span>
     </v-footer>
   </v-app>
@@ -79,3 +77,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.clear
+  opacity: 1
+</style>
