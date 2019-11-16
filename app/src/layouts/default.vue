@@ -38,7 +38,10 @@
       </v-list>
     </v-navigation-drawer>
     <v-content>
-      <v-container fluid>
+      <v-container
+        class="pa-0"
+        fluid
+      >
         <nuxt />
       </v-container>
     </v-content>
@@ -46,7 +49,7 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; 2019</span>
+      <span>&copy; 2019 Code for University</span>
     </v-footer>
   </v-app>
 </template>

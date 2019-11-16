@@ -2,8 +2,8 @@
   <v-carousel
     height="auto"
     cycle
-    show-arrows-on-hover
-    hide-delimiter-background
+    :show-arrows="false"
+    hide-delimiters
   >
     <v-carousel-item
       v-for="(item,i) in items"
@@ -31,7 +31,7 @@ export default {
       items: [
         {
           src: '/event1.jpg',
-          text: '大学と、何ができるだろう'
+          text: '大学の明日をちょっとだけ変えよう'
         },
         {
           src: '/event2.jpg',
