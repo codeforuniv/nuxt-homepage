@@ -1,13 +1,13 @@
 <template>
   <div>
     <v-container class="pa-0" fluid>
-      <v-row>
-        <Carousel />
-      </v-row>
+      <Carousel />
     </v-container>
     <v-container>
       <v-row>
-        <p class="display-1 font-weight-black red--text">RECENT NEWS</p>
+        <p class="display-1 font-weight-black red--text">
+          RECENT NEWS
+        </p>
       </v-row>
       <v-row class="pa-5">
         <NewsCard />
@@ -17,7 +17,9 @@
     </v-container>
     <v-container>
       <v-row>
-        <p class="display-1 font-weight-black red--text">MESSAGE</p>
+        <p class="display-1 font-weight-black red--text">
+          MESSAGE
+        </p>
       </v-row>
       <v-row class="blue-grey lighten-5 pa-5">
         <v-col cols="8" class="pa-5 text">
@@ -32,29 +34,39 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-col cols="4">asdf</v-col>
+        <v-col cols="4">
+          asdf
+        </v-col>
       </v-row>
     </v-container>
     <v-container>
       <v-row>
-        <p class="display-1 font-weight-black red--text">WHAT WE DO</p>
+        <p class="display-1 font-weight-black red--text">
+          WHAT WE DO
+        </p>
       </v-row>
       <v-row class="blue-grey lighten-5 pa-5">
         <v-col cols="8">
           <!-- 画像はる -->
         </v-col>
-        <v-col cols="4">asdf</v-col>
+        <v-col cols="4">
+          asdf
+        </v-col>
       </v-row>
     </v-container>
     <v-container>
       <v-row>
-        <p class="display-1 font-weight-black red--text">FOR PEOPLE</p>
+        <p class="display-1 font-weight-black red--text">
+          FOR PEOPLE
+        </p>
       </v-row>
       <v-row class="blue-grey lighten-5 pa-5">
         <v-col cols="8">
           <!-- 画像はる -->
         </v-col>
-        <v-col cols="4">asdf</v-col>
+        <v-col cols="4">
+          asdf
+        </v-col>
       </v-row>
     </v-container>
     <v-container>
