@@ -110,6 +110,16 @@ export default {
           icon: 'mdi-alien-outline',
           title: 'Test',
           to: '/test'
+        },
+        {
+          icon: 'mdi-animation',
+          title: 'Products',
+          to: '/products'
+        },
+        {
+          icon: 'mdi-file-edit',
+          title: 'Ideas',
+          to: '/ideas'
         }
       ],
       miniVariant: false,

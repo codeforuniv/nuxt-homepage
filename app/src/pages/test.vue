@@ -76,16 +76,16 @@ export default {
           'https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/68310782_116681003017929_3993429826970058752_o.jpg?_nc_cat=110&_nc_oc=AQnWFRGs8t9djUKlozZyAO2nzS-7KEBkNTfKKgdeeld_GmwZchjSPVi0IKyGVepWZBM&_nc_ht=scontent-nrt1-1.xx&oh=b72d8ae610d1b9edeaf67ef3e4aa8d1c&oe=5E55DF5E'
         ],
         tasks: [
-          {
-            // done: false,
-            comment: 'Foobar',
-            time: '2019-11-18 00:13'
-          },
-          {
-            // done: false,
-            comment: 'Fizzbuzz',
-            time: '2019-11-18 00:15'
-          }
+        //   {
+        //     // done: false,
+        //     // comment: 'Foobar',
+        //     // time: '2019-11-18 00:13'
+        //   },
+        //   {
+        //     // done: false,
+        //     // comment: 'Fizzbuzz',
+        //     // time: '2019-11-18 00:15'
+        //   }
         ],
         word: null,
         flex: 6
@@ -100,16 +100,16 @@ export default {
           'https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/74333545_150687532950609_2777432028927229952_n.jpg?_nc_cat=108&_nc_ohc=kufRB5WtlugAQnMC-syP_jrzU3Jqr3YfH39S8ZzaEv53jAvpG98efqRpg&_nc_ht=scontent-nrt1-1.xx&oh=f7aca4cb452f95afc315598e422ede2b&oe=5E4E5E55'
         ],
         tasks: [
-          {
-            done: false,
-            comment: 'Foobar',
-            time: '2019-11-18 00:13'
-          },
-          {
-            done: false,
-            comment: 'Fizzbuzz',
-            time: '2019-11-18 00:15'
-          }
+          // {
+          //   done: false,
+          //   comment: 'Foobar',
+          //   time: '2019-11-18 00:13'
+          // },
+          // {
+          //   done: false,
+          //   comment: 'Fizzbuzz',
+          //   time: '2019-11-18 00:15'
+          // }
         ],
         word: null,
         flex: 6
