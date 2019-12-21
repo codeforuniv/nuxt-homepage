@@ -2,16 +2,24 @@
   <v-carousel
     height="auto"
     cycle
+    :show-arrows="false"
+    hide-delimiters
   >
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
     >
-      <img
-        :src="item.src"
-        width="800px"
-        height="auto"
-      >
+      <v-img :src="item.src">
+        <v-row
+          class="dark fill-height"
+          align="center"
+          justify="center"
+        >
+          <p class="tagline display-1">
+            {{ item.text }}
+          </p>
+        </v-row>
+      </v-img>
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -22,13 +30,16 @@ export default {
     return {
       items: [
         {
-          src: '/event1.jpg'
+          src: '/event1.jpg',
+          text: '大学の明日をちょっとだけ変えよう'
         },
         {
-          src: '/event2.jpg'
+          src: '/event2.jpg',
+          text: 'Code for University'
         },
         {
-          src: '/event3.jpg'
+          src: '/event3.jpg',
+          text: '思いを形に'
         }
       ]
     }
@@ -37,6 +48,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.v-carousel
-  width: 100%
+.tagline
+  color: white
+
+.dark
+  background-color: black
+  opacity: 0.5
 </style>
