@@ -1,24 +1,26 @@
- <template>
+<template>
   <v-card>
     <v-select
-            v-model="selectedIdeathon"
-            :items="items"
-            menu-props="auto"
-            item-text="ideathon"
-            item-value="information"
-            hide-details
-            single-line
-            return-object
-          ></v-select>
+      v-model="selectedIdeathon"
+      :items="items"
+      menu-props="auto"
+      item-text="ideathon"
+      item-value="information"
+      hide-details
+      single-line
+      return-object
+    />
     <v-toolbar class="tabs" color="cyan" dark flat>
-     <template v-slot:extension>
+      <template v-slot:extension>
         <v-tabs
           v-model="currentItem"
           background-color="transparent"
           fixed-tabs
           slider-color="white"
         >
-          <v-tab v-for="info in selectedIdeathon.information" :key="info.id" :href="'#tab-' + info.team" >{{ info.team }}</v-tab>
+          <v-tab v-for="info in selectedIdeathon.information" :key="info.id" :href="'#tab-' + info.team">
+            {{ info.team }}
+          </v-tab>
         </v-tabs>
       </template>
     </v-toolbar>
@@ -31,25 +33,26 @@
             :key="content.id"
             cols="6"
           >
-            <v-card  dark height="400px" @click.stop="content.dialog = true">
+            <v-card @click.stop="content.dialog = true" dark height="400px">
               <div class="d-flex flex-no-wrap justify-space-between">
                 <div>
                   <v-card-title
-                    class="headline"
                     v-text="content.title"
-                  ></v-card-title>
-                  <v-divider></v-divider>
-                  <v-spacer></v-spacer>
+                    class="headline"
+                  />
+                  <v-divider />
+                  <v-spacer />
                   <!-- <v-card-subtitle v-text="content.artist" white-space:pre-wrap word-wrap:break-word></v-card-subtitle> -->
                 </div>
               </div>
-              <v-img :src="content.src" ></v-img>
+              <v-img :src="content.src" />
               <v-dialog v-model="content.dialog" max-width="1200px">
                 <v-card class="grey fluid">
-                  <v-card class="pa-4 font headline" width="1200px">{{ content.title }}</v-card>
-                  <v-divider></v-divider>
-                  <v-card width="1200px" height="2500"></v-card>
-
+                  <v-card class="pa-4 font headline" width="1200px">
+                    {{ content.title }}
+                  </v-card>
+                  <v-divider />
+                  <v-card width="1200px" height="2500" />
                 </v-card>
               </v-dialog>
             </v-card>

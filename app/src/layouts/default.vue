@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-app-bar
-      class="clear"
       :clipped-left="clipped"
+      class="clear"
       fixed
       app
     >

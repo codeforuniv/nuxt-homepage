@@ -1,8 +1,8 @@
 <template>
   <v-carousel
+    :show-arrows="false"
     height="auto"
     cycle
-    :show-arrows="false"
     hide-delimiters
   >
     <v-carousel-item
@@ -10,15 +10,15 @@
       :key="i"
     >
       <v-img :src="item.src">
-        <v-row
+        <!-- <v-row
           class="dark fill-height"
           align="center"
           justify="center"
         >
           <p class="tagline display-1">
             {{ item.text }}
-          </p>
-        </v-row>
+          </p> -->
+        <!-- </v-row> -->
       </v-img>
     </v-carousel-item>
   </v-carousel>
