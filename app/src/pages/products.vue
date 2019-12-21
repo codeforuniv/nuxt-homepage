@@ -1,14 +1,16 @@
- <template>
+<template>
   <v-card>
     <v-toolbar color="cyan" dark flat>
-     <template v-slot:extension>
+      <template v-slot:extension>
         <v-tabs
           v-model="currentItem"
           background-color="transparent"
           fixed-tabs
           slider-color="white"
         >
-          <v-tab v-for="column in columns" :key="column" :href="'#tab-' + column">{{ column }}</v-tab>
+          <v-tab v-for="column in columns" :key="column" :href="'#tab-' + column">
+            {{ column }}
+          </v-tab>
         </v-tabs>
       </template>
     </v-toolbar>
@@ -21,31 +23,32 @@
             :key="i"
             cols="8"
           >
-            <v-card :color="item.color" dark height="400px" @click.stop="item.dialog = true">
+            <v-card :color="item.color" @click.stop="item.dialog = true" dark height="400px">
               <div class="d-flex flex-no-wrap justify-space-between">
                 <div>
                   <v-card-title
-                    class="headline"
                     v-text="item.title"
-                  ></v-card-title>
-                  <v-divider></v-divider>
-                  <v-spacer></v-spacer>
-                  <v-card-subtitle v-text="item.artist" white-space:pre-wrap word-wrap:break-word></v-card-subtitle>
+                    class="headline"
+                  />
+                  <v-divider />
+                  <v-spacer />
+                  <v-card-subtitle v-text="item.artist" white-space:pre-wrap word-wrap:break-word />
                 </div>
                 <v-avatar
                   class="mt-12 ma-3"
                   size="250"
                   tile
                 >
-                  <v-img :src="item.src"></v-img>
+                  <v-img :src="item.src" />
                 </v-avatar>
               </div>
               <v-dialog v-model="item.dialog" max-width="1200px">
                 <v-card class="grey fluid">
-                  <v-card class="pa-4 font headline" width="1200px">{{ item.title }}</v-card>
-                  <v-divider></v-divider>
-                  <v-card width="1200px" height="2500"></v-card>
-
+                  <v-card class="pa-4 font headline" width="1200px">
+                    {{ item.title }}
+                  </v-card>
+                  <v-divider />
+                  <v-card width="1200px" height="2500" />
                 </v-card>
               </v-dialog>
             </v-card>

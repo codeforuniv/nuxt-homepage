@@ -2,65 +2,71 @@
   <v-container style="max-width: 800px">
     <v-row>
       <v-col v-for="(post,index) in posts" :key="index" :cols="post.flex">
-        <v-card class="mx-auto" height='500px' fluid @click.stop="post.dialog = true">
-          <v-card class="pa-4 title" tile="true" height='90px'>{{ post.title }}</v-card>
-          <v-img fluid :src="post.images[0]"></v-img>
+        <v-card @click.stop="post.dialog = true" class="mx-auto" height="500px" fluid>
+          <v-card class="pa-4 title" tile="true" height="90px">
+            {{ post.title }}
+          </v-card>
+          <v-img :src="post.images[0]" fluid />
           <v-card-text>{{ post.content }}</v-card-text>
 
           <v-dialog v-model="post.dialog" max-width="600px">
             <v-card class="grey fluid">
-              <v-card class="pa-4 font headline">{{ post.title }}</v-card>
-              <v-divider></v-divider>
+              <v-card class="pa-4 font headline">
+                {{ post.title }}
+              </v-card>
+              <v-divider />
               <v-carousel>
                 <v-carousel-item
                   v-for="(image,i) in post.images"
                   :key="i"
                   :src="image"
-                >
-                </v-carousel-item>
+                />
               </v-carousel>
-              <v-card tile="true" class="pa-4">{{ post.content }}</v-card>
-              <v-card class="mt-4 pl-2" tile="true">コメント</v-card>
-              <v-divider></v-divider>
+              <v-card tile="true" class="pa-4">
+                {{ post.content }}
+              </v-card>
+              <v-card class="mt-4 pl-2" tile="true">
+                コメント
+              </v-card>
+              <v-divider />
               <v-card v-if="post.tasks.length > 0">
                 <v-slide-y-transition class="py-0" group tag="v-list">
                   <template v-for="(task, i) in post.tasks">
-                    <v-divider v-if="i !== 0" :key="`${i}-divider`"></v-divider>
+                    <v-divider v-if="i !== 0" :key="`${i}-divider`" />
                     <v-list-item :key="`${i}-${task.comment}`">
                       <v-list-item-action>
                         <div
-                          class="mr-4"
                           v-text="task.time"
-                        ></div>
+                          class="mr-4"
+                        />
                         <div
-                          class="m-1"
                           v-text="task.comment"
-                        ></div>
+                          class="m-1"
+                        />
                       </v-list-item-action>
 
-                      <v-spacer></v-spacer>
+                      <v-spacer />
                     </v-list-item>
                   </template>
                 </v-slide-y-transition>
               </v-card>
               <v-row class="align-start">
-                <v-col cols='10'>
-                  <v-text-field class="mt-4" v-model="post.word" label="コメント入力" solo>
-                  </v-text-field>
+                <v-col cols="10">
+                  <v-text-field v-model="post.word" class="mt-4" label="コメント入力" solo />
                 </v-col>
-                <v-spacer></v-spacer>
-                <v-col cols='2'>
-                  <v-btn outlined height='50px' class="green mt-4" v-on:click="create(index,post.word)">投稿</v-btn>
+                <v-spacer />
+                <v-col cols="2">
+                  <v-btn v-on:click="create(index,post.word)" outlined height="50px" class="green mt-4">
+                    投稿
+                  </v-btn>
                 </v-col>
               </v-row>
             </v-card>
-
           </v-dialog>
-
         </v-card>
       </v-col>
     </v-row>
-    <v-divider class="mb-4"></v-divider>
+    <v-divider class="mb-4" />
   </v-container>
 </template>
 
