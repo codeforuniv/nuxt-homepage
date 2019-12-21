@@ -1,27 +1,30 @@
- <template>
-  <v-card>
-    <v-select
-            v-model="selectedIdeathon"
-            :items="items"
-            menu-props="auto"
-            item-text="ideathon"
-            item-value="information"
-            hide-details
-            single-line
-            return-object
-          ></v-select>
-    <v-toolbar class="tabs" color="cyan" dark flat>
-     <template v-slot:extension>
-        <v-tabs
-          v-model="currentItem"
-          background-color="transparent"
-          fixed-tabs
-          slider-color="white"
-        >
-          <v-tab v-for="info in selectedIdeathon.information" :key="info.id" :href="'#tab-' + info.team" >{{ info.team }}</v-tab>
-        </v-tabs>
-      </template>
-    </v-toolbar>
+ 
+<template>
+  <v-container>
+    <v-col class="d-flex" cols="12" sm="4" justify="center">
+      <v-select
+              v-model="selectedIdeathon"
+              :items="items"
+              label="アイデアソンを選択"
+              menu-props="auto"
+              item-text="ideathon"
+              item-value="information"
+              hide-details
+              return-object
+            ></v-select>
+    </v-col>
+    <div class="bb">
+      <v-tabs
+        v-model="currentItem"
+        class="tabs mt-3"
+        color="rgb(40,170,170)"
+        slider-color="white"
+        grow
+      >
+        <v-tab v-for="info in selectedIdeathon.information" active-class="tabs__item--active active" :key="info.id" :href="'#tab-' + info.team" >{{ info.team }}</v-tab>
+      </v-tabs>
+    </div>
+
 
     <v-tabs-items v-model="currentItem">
       <v-tab-item v-for="info in selectedIdeathon.information" :key="info.id" :value="'tab-' + info.team">
@@ -29,27 +32,24 @@
           <v-col
             v-for="content in info.contents"
             :key="content.id"
-            cols="6"
           >
-            <v-card  dark height="400px" @click.stop="content.dialog = true">
-              <div class="d-flex flex-no-wrap justify-space-between">
-                <div>
-                  <v-card-title
-                    class="headline"
-                    v-text="content.title"
-                  ></v-card-title>
-                  <v-divider></v-divider>
-                  <v-spacer></v-spacer>
-                  <!-- <v-card-subtitle v-text="content.artist" white-space:pre-wrap word-wrap:break-word></v-card-subtitle> -->
-                </div>
-              </div>
+            <v-card  dark height="800px" @click.stop="content.dialog = true">
+              <v-card-title
+                class="headline"
+                v-text="content.title"
+              ></v-card-title>
+              <v-divider></v-divider>
+              <v-spacer></v-spacer>
+              <!-- <v-card-subtitle v-text="content.artist" white-space:pre-wrap word-wrap:break-word></v-card-subtitle> -->
               <v-img :src="content.src" ></v-img>
               <v-dialog v-model="content.dialog" max-width="1200px">
                 <v-card class="grey fluid">
                   <v-card class="pa-4 font headline" width="1200px">{{ content.title }}</v-card>
                   <v-divider></v-divider>
-                  <v-card width="1200px" height="2500"></v-card>
 
+                  <v-card width="1200px" height="2500">
+                    <v-img :src="content.src" ></v-img>
+                  </v-card>
                 </v-card>
               </v-dialog>
             </v-card>
@@ -57,7 +57,7 @@
         </v-row>
       </v-tab-item>
     </v-tabs-items>
-  </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -73,18 +73,8 @@ export default {
             color: '#1F7087',
             contents: [
               {
-                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-                title: '教育',
-                artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
-                '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
-                '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
-                '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
-                '/nこういった対応も含め、見事な官民連携の事例と感じます。',
-                dialog: false
-              },
-              {
-                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-                title: '政治',
+                src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68403814_116680189684677_4986041428145602560_o.jpg?_nc_cat=103&_nc_ohc=ReC2SWMSoJEAQkaEXXR8Ztj8aq_dtsOeIpcDQZ5gyVylvYw0kP7VtsoPQ&_nc_ht=scontent-lax3-1.xx&oh=fae605e55b30eff0dc2df9c33be107b8&oe=5E77C07B',
+                title: '大学に求めることは？',
                 artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
                 '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
                 '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
@@ -99,18 +89,90 @@ export default {
             color: '#952175',
             contents: [
               {
-                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-                title: '経済',
+                src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68333965_116680153018014_5988082870537682944_o.jpg?_nc_cat=110&_nc_ohc=FaRzdiWemngAQnSlxyixalsinP8YDJtN9HF4WZ_Gh6_tCJQVjO5Fh95Fg&_nc_ht=scontent-lax3-1.xx&oh=7b11afc49cdf1d24171af27c44669bc6&oe=5EA8DCF8',
+                title: '大学に求めることは？',
                 artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
                 '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
                 '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
                 '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
                 '/nこういった対応も含め、見事な官民連携の事例と感じます。',
                 dialog: false
-              },
+              }
+            ]
+          },
+          {
+            team: 'teamC',
+            color: '#1F7087',
+            contents: [
+              {
+                src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68586209_116680136351349_8647060861082402816_o.jpg?_nc_cat=103&_nc_ohc=JjOPI5IP2HkAQmbmD1LkSn32rfRL7u-yX_KFuDpwT1S_Yvi1mG8S8OTbQ&_nc_ht=scontent-lax3-1.xx&oh=c01ceb0735f7b9e393fd24afdaaf8e5b&oe=5E682F0A',
+                title: '大学に求めることは？',
+                artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+                '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+                '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+                '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+                '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+                dialog: false
+              }
+            ]
+          },
+          {
+            team: 'teamD',
+            color: '#1F7087',
+            contents: [
+              {
+                src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68403814_116680189684677_4986041428145602560_o.jpg?_nc_cat=103&_nc_ohc=ReC2SWMSoJEAQkaEXXR8Ztj8aq_dtsOeIpcDQZ5gyVylvYw0kP7VtsoPQ&_nc_ht=scontent-lax3-1.xx&oh=fae605e55b30eff0dc2df9c33be107b8&oe=5E77C07B',
+                title: '大学に求めることは？',
+
+                artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+                '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+                '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+                '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+                '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+                dialog: false
+
+              }
+            ]
+          },
+          {
+            team: 'teamE',
+            color: '#1F7087',
+            contents: [
               {
                 src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-                title: '社会',
+                title: '教育',
+                artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+                '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+                '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+                '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+                '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+                dialog: false
+              }
+            ]
+          },
+          {
+            team: 'teamF',
+            color: '#1F7087',
+            contents: [
+              {
+                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
+                title: '教育',
+                artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+                '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+                '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+                '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+                '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+                dialog: false
+              }
+            ]
+          },
+          {
+            team: 'teamG',
+            color: '#1F7087',
+            contents: [
+              {
+                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
+                title: '教育',
                 artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
                 '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
                 '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
@@ -126,22 +188,44 @@ export default {
         ideathon: '11/23 @会議室',
         information: [
           {
-            team: 'teamC',
+            team: 'teamA',
             color: '#1F7087',
             contents: [
               {
-                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-                title: '「4919（食育） for IKOMA」が正式運用開始！【鈴木まなみ】',
+                src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68403814_116680189684677_4986041428145602560_o.jpg?_nc_cat=103&_nc_ohc=ReC2SWMSoJEAQkaEXXR8Ztj8aq_dtsOeIpcDQZ5gyVylvYw0kP7VtsoPQ&_nc_ht=scontent-lax3-1.xx&oh=fae605e55b30eff0dc2df9c33be107b8&oe=5E77C07B',
+                title: '大学に求めることは？',
                 artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
                 '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
                 '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
                 '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
                 '/nこういった対応も含め、見事な官民連携の事例と感じます。',
                 dialog: false
-              },
+              }
+            ]
+          },
+          {
+            team: 'teamB',
+            color: '#952175',
+            contents: [
               {
-                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-                title: '「4919（食育） for IKOMA」が正式運用開始！【鈴木まなみ】',
+                src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68333965_116680153018014_5988082870537682944_o.jpg?_nc_cat=110&_nc_ohc=FaRzdiWemngAQnSlxyixalsinP8YDJtN9HF4WZ_Gh6_tCJQVjO5Fh95Fg&_nc_ht=scontent-lax3-1.xx&oh=7b11afc49cdf1d24171af27c44669bc6&oe=5EA8DCF8',
+                title: '大学に求めることは？',
+                artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+                '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+                '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+                '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+                '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+                dialog: false
+              }
+            ]
+          },
+          {
+            team: 'teamC',
+            color: '#1F7087',
+            contents: [
+              {
+                src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68586209_116680136351349_8647060861082402816_o.jpg?_nc_cat=103&_nc_ohc=JjOPI5IP2HkAQmbmD1LkSn32rfRL7u-yX_KFuDpwT1S_Yvi1mG8S8OTbQ&_nc_ht=scontent-lax3-1.xx&oh=c01ceb0735f7b9e393fd24afdaaf8e5b&oe=5E682F0A',
+                title: '大学に求めることは？',
                 artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
                 '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
                 '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
@@ -153,21 +237,11 @@ export default {
           },
           {
             team: 'teamD',
-            color: '#952175',
+            color: '#1F7087',
             contents: [
               {
-                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-                title: '「4919（食育） for IKOMA」が正式運用開始！【鈴木まなみ】',
-                artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
-                '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
-                '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
-                '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
-                '/nこういった対応も含め、見事な官民連携の事例と感じます。',
-                dialog: false
-              },
-              {
-                src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-                title: '「4919（食育） for IKOMA」が正式運用開始！【鈴木まなみ】',
+                src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68403814_116680189684677_4986041428145602560_o.jpg?_nc_cat=103&_nc_ohc=ReC2SWMSoJEAQkaEXXR8Ztj8aq_dtsOeIpcDQZ5gyVylvYw0kP7VtsoPQ&_nc_ht=scontent-lax3-1.xx&oh=fae605e55b30eff0dc2df9c33be107b8&oe=5E77C07B',
+                title: '大学に求めることは？',
                 artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
                 '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
                 '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
@@ -188,18 +262,8 @@ export default {
           color: '#1F7087',
           contents: [
             {
-              src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-              title: '「4919（食育） for IKOMA」が正式運用開始！【鈴木まなみ】',
-              artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
-              '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
-              '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
-              '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
-              '/nこういった対応も含め、見事な官民連携の事例と感じます。',
-              dialog: false
-            },
-            {
-              src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-              title: '「4919（食育） for IKOMA」が正式運用開始！【鈴木まなみ】',
+              src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68403814_116680189684677_4986041428145602560_o.jpg?_nc_cat=103&_nc_ohc=ReC2SWMSoJEAQkaEXXR8Ztj8aq_dtsOeIpcDQZ5gyVylvYw0kP7VtsoPQ&_nc_ht=scontent-lax3-1.xx&oh=fae605e55b30eff0dc2df9c33be107b8&oe=5E77C07B',
+              title: '大学に求めることは？',
               artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
               '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
               '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
@@ -214,18 +278,88 @@ export default {
           color: '#952175',
           contents: [
             {
-              src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-              title: '「4919（食育） for IKOMA」が正式運用開始！【鈴木まなみ】',
+              src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68333965_116680153018014_5988082870537682944_o.jpg?_nc_cat=110&_nc_ohc=FaRzdiWemngAQnSlxyixalsinP8YDJtN9HF4WZ_Gh6_tCJQVjO5Fh95Fg&_nc_ht=scontent-lax3-1.xx&oh=7b11afc49cdf1d24171af27c44669bc6&oe=5EA8DCF8',
+              title: '大学に求めることは？',
               artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
               '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
               '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
               '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
               '/nこういった対応も含め、見事な官民連携の事例と感じます。',
               dialog: false
-            },
+            }
+          ]
+        },
+        {
+          team: 'teamC',
+          color: '#1F7087',
+          contents: [
+            {
+              src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68586209_116680136351349_8647060861082402816_o.jpg?_nc_cat=103&_nc_ohc=JjOPI5IP2HkAQmbmD1LkSn32rfRL7u-yX_KFuDpwT1S_Yvi1mG8S8OTbQ&_nc_ht=scontent-lax3-1.xx&oh=c01ceb0735f7b9e393fd24afdaaf8e5b&oe=5E682F0A',
+              title: '大学に求めることは？',
+              artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+              '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+              '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+              '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+              '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+              dialog: false
+            }
+          ]
+        },
+        {
+          team: 'teamD',
+          color: '#1F7087',
+          contents: [
+            {
+              src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/68403814_116680189684677_4986041428145602560_o.jpg?_nc_cat=103&_nc_ohc=ReC2SWMSoJEAQkaEXXR8Ztj8aq_dtsOeIpcDQZ5gyVylvYw0kP7VtsoPQ&_nc_ht=scontent-lax3-1.xx&oh=fae605e55b30eff0dc2df9c33be107b8&oe=5E77C07B',
+              title: '大学に求めることは？',
+              artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+              '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+              '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+              '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+              '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+              dialog: false
+            }
+          ]
+        },
+        {
+          team: 'teamE',
+          color: '#1F7087',
+          contents: [
             {
               src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
-              title: '「4919（食育） for IKOMA」が正式運用開始！【鈴木まなみ】',
+              title: '教育',
+              artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+              '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+              '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+              '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+              '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+              dialog: false
+            }
+          ]
+        },
+        {
+          team: 'teamF',
+          color: '#1F7087',
+          contents: [
+            {
+              src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
+              title: '教育',
+              artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
+              '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
+              '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
+              '/n生駒市は、河中さんが開発したアプリのために、公開しているオープンデータを改訂し、9月からアレルゲンの列を追加しました。以前はアレルゲンはPDFに書かれており、その部分は河中さんが手打ちで入力して対応していましたが、9月からcsvに追加されたため、自動取り込みができるようになったとのこと。' +
+              '/nこういった対応も含め、見事な官民連携の事例と感じます。',
+              dialog: false
+            }
+          ]
+        },
+        {
+          team: 'teamG',
+          color: '#1F7087',
+          contents: [
+            {
+              src: 'https://livedoor.blogimg.jp/manax1121/imgs/9/7/97c0256e.png',
+              title: '教育',
               artist: '市民参加のアプリコンテスト受賞作品が、実運用されるサービスに成長！' +
               '<br />生駒市が公開している給食予定献立表のオープンデータを利用した給食献立表アプリ「4919（食育）for IKOMA」が、11月から学校で配布している給食献立表からダウンロードできるようになることが正式に発表されました。' +
               '/n→発表資料「給食献立アプリ「4919(食育)for_IKOMA」を給食献立表からダウンロード」' +
@@ -243,76 +377,20 @@ export default {
 </script>
 
 <style>
-  .tabs-component {
-    margin: 4em 0;
+  .active {
+  border: 2px solid rgb(40,170,170);
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  background-color: #fff;
+  color: black;
   }
-  .tabs-component-tabs {
-    border: solid 1px #ddd;
-    border-radius: 6px;
-    margin-bottom: 5px;
+
+  .bb {
+  border-bottom: 5px solid rgb(40,170,170);
   }
-  @media (min-width: 700px) {
-    .tabs-component-tabs {
-      border: 0;
-      align-items: stretch;
-      display: flex;
-      justify-content: flex-start;
-      margin-bottom: -1px;
-    }
-  }
-  .tabs-component-tab {
-    color: #999;
-    font-size: 14px;
-    font-weight: 600;
-    margin-right: 0;
-    list-style: none;
-  }
-  .tabs-component-tab:not(:last-child) {
-    border-bottom: dotted 1px #ddd;
-  }
-  .tabs-component-tab:hover {
-    color: #666;
-  }
-  .tabs-component-tab.is-active {
-    color: #000;
-  }
-  .tabs-component-tab.is-disabled * {
-    color: #cdcdcd;
-    cursor: not-allowed !important;
-  }
-  @media (min-width: 700px) {
-    .tabs-component-tab {
-      background-color: #fff;
-      border: solid 1px #ddd;
-      border-radius: 3px 3px 0 0;
-      margin-right: .5em;
-      transform: translateY(2px);
-      transition: transform .3s ease;
-    }
-    .tabs-component-tab.is-active {
-      border-bottom: solid 1px #fff;
-      z-index: 2;
-      transform: translateY(0);
-    }
-  }
-  .tabs-component-tab-a {
-    align-items: center;
-    color: inherit;
-    display: flex;
-    padding: .75em 1em;
-    text-decoration: none;
-  }
-  .tabs-component-panels {
-    padding: 4em 0;
-  }
-  @media (min-width: 700px) {
-    .tabs-component-panels {
-      border-top-left-radius: 0;
-      background-color: #fff;
-      border: solid 1px #ddd;
-      border-radius: 0 6px 6px 6px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, .05);
-      padding: 4em 2em;
-    }
+
+  .tabs {
+  position: relative;
+  top: 2px;
   }
 </style>
