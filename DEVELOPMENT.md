@@ -179,8 +179,14 @@ Hosting URL: https://target_project.firebaseapp.com
 
 ### 関連パッケージのインストール(例:公開用)
 
+<!--
 ```shell
 [user@host app] $ npm install --production
+```
+-->
+
+```shell
+[user@host app] $ npm install --production && npm prune --production
 ```
 
 ### Firebaseへのデプロイ
