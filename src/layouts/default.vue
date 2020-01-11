@@ -1,17 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar
-      class="clear"
-      :clipped-left="clipped"
-      fixed
-      app
-    >
+    <v-app-bar :clipped-left="clipped" class="clear" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <a href="/">
-        <img
-          src="/logo-wide.png"
-          width="160px"
-        >
+        <img src="/logo-wide.png" width="160px">
       </a>
     </v-app-bar>
     <v-navigation-drawer
@@ -39,10 +31,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-content>
-      <v-container
-        class="pa-0"
-        fluid
-      >
+      <v-container class="pa-0" fluid>
         <nuxt />
       </v-container>
     </v-content>
@@ -67,8 +56,8 @@ export default {
         },
         {
           icon: 'mdi-alien-outline',
-          title: 'Test',
-          to: '/test'
+          title: 'News',
+          to: '/news'
         },
         {
           icon: 'mdi-animation',

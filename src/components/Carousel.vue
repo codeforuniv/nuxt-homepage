@@ -1,24 +1,16 @@
 <template>
-  <v-carousel
-    height="auto"
-    cycle
-    :show-arrows="false"
-    hide-delimiters
-  >
-    <v-carousel-item
-      v-for="(item,i) in items"
-      :key="i"
-    >
+  <v-carousel height="auto" cycle hide-delimiters>
+    <v-carousel-item v-for="(item, i) in items" :key="i">
       <v-img :src="item.src">
-        <v-row
+        <!-- <v-row
           class="dark fill-height"
           align="center"
           justify="center"
         >
           <p class="tagline display-1">
             {{ item.text }}
-          </p>
-        </v-row>
+          </p> -->
+        <!-- </v-row> -->
       </v-img>
     </v-carousel-item>
   </v-carousel>
