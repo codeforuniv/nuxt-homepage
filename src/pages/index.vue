@@ -77,38 +77,35 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-divider></v-divider>
-    <section>
-      <v-layout column wrap class="my-12" align-center>
-        <v-flex xs12 sm4 class="my-4">
-          <div class="text-center">
-            <h2 class="headline">
-              News
-            </h2>
-          </div>
-        </v-flex>
-        <v-flex xs12>
-          <v-container grid-list-xl>
-            <v-layout row wrap align-center>
-              <v-flex xs12 md4>
-                <NewsCard />
-              </v-flex>
-              <v-flex xs12 md4>
-                <NewsCard />
-              </v-flex>
-              <v-flex xs12 md4>
-                <NewsCard />
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-flex>
-      </v-layout>
-    </section>
+
+    <v-divider />
+
+    <v-row class="my-12">
+      <v-col class="text-center">
+        <h2> 最近のニュース </h2>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col
+        v-for="(post, index) in posts"
+        :key="index"
+        cols="12"
+        md="4"
+        class="my-4"
+      >
+        <NewsCard :post="post" />
+      </v-col>
+    </v-row>
+
+    <v-divider />
+
     <v-row class="my-12">
       <v-col class="text-center">
         <h2> Code for Universityの主な活動 </h2>
       </v-col>
     </v-row>
+
     <v-row class="my-12">
       <v-col
         cols="12"
@@ -178,7 +175,9 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-divider></v-divider>
+
+    <v-divider />
+
     <v-row class="my-12">
       <v-col class="text-center">
         <h2> メッセージ </h2>
