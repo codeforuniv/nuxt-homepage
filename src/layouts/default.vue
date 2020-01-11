@@ -56,8 +56,8 @@ export default {
         },
         {
           icon: 'mdi-alien-outline',
-          title: 'Test',
-          to: '/test'
+          title: 'News',
+          to: '/news'
         },
         {
           icon: 'mdi-animation',
