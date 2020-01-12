@@ -65,13 +65,23 @@ export default {
         },
         {
           icon: 'mdi-animation',
-          title: 'Products',
-          to: '/products'
+          title: 'Apps',
+          to: '/apps'
         },
         {
           icon: 'mdi-file-edit',
           title: 'Ideathon',
           to: '/ideas'
+        },
+        {
+          icon: 'mdi-account-group',
+          title: 'Events',
+          to: '/events'
+        },
+        {
+          icon: 'mdi-contactless-payment',
+          title: 'Contact',
+          to: '/contact'
         }
       ],
       title: 'Vuetify.js'
