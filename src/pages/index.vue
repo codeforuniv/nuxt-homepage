@@ -13,7 +13,7 @@
           >
             <v-img
               src="./logo.png"
-            ></v-img>
+            />
           </v-col>
         </v-row>
         <v-row class="justify-center my-4">

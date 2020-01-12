@@ -47,14 +47,18 @@
         >
           <v-row>
             <v-col cols="12" md="4" class="text-left">
-              <v-row class="ma-2">Twitter</v-row>
+              <v-row class="ma-2">
+                Twitter
+              </v-row>
               <v-row class="justify-center">
                 <a class="twitter-timeline" data-width="400" data-height="300" href="https://twitter.com/codeforuniv?ref_src=twsrc%5Etfw">Tweets by codeforuniv</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
               </v-row>
             </v-col>
             <v-col cols="12" md="4" class="text-left">
-              <v-row class="ma-2">クイックリンク</v-row>
+              <v-row class="ma-2">
+                クイックリンク
+              </v-row>
               <v-row class="px-10 align-center">
                 <v-list flat color="rgba(0,0,0,0)">
                   <v-list-item
@@ -69,7 +73,9 @@
               </v-row>
             </v-col>
             <v-col cols="12" md="4" class="text-left">
-              <v-row class="ma-2">お問い合わせ</v-row>
+              <v-row class="ma-2">
+                お問い合わせ
+              </v-row>
               <v-row class="px-10 align-center">
                 <v-list flat color="rgba(0,0,0,0)">
                   <v-list-item class="white--text">
@@ -90,7 +96,7 @@
             Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
           </v-card-text>
 
-          <v-divider></v-divider>
+          <v-divider />
 
           <v-card-text class="white--text">
             {{ new Date().getFullYear() }} — <strong>Code for University.</strong>

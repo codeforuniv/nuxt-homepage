@@ -1,8 +1,8 @@
 <template>
   <v-hover v-slot:default="{ hover }">
     <v-card
-      class="mx-auto"
       :elevation="hover ? 12 : 2"
+      class="mx-auto"
     >
       <v-img
         :src="post.images[0]"
@@ -39,7 +39,17 @@
 
 <script>
 export default {
-  props: ['post']
+  props: {
+    'post': {
+      type: Object,
+      'default': () => ({
+        title: '',
+        images: [],
+        content: '',
+        eventDate: Date()
+      })
+    }
+  }
 }
 </script>
 
