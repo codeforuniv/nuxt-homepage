@@ -1,7 +1,7 @@
 <template>
   <v-carousel height="auto" cycle hide-delimiters>
-    <v-carousel-item v-for="(item, i) in items" :key="i">
-      <v-img :src="item.src">
+    <v-carousel-item v-for="(image, index) in images" :key="index">
+      <v-img :src="image.src">
         <!-- <v-row
           class="dark fill-height"
           align="center"
@@ -18,24 +18,7 @@
 
 <script>
 export default {
-  data () {
-    return {
-      items: [
-        {
-          src: '/event1.jpg',
-          text: '大学の明日をちょっとだけ変えよう'
-        },
-        {
-          src: '/event2.jpg',
-          text: 'Code for University'
-        },
-        {
-          src: '/event3.jpg',
-          text: '思いを形に'
-        }
-      ]
-    }
-  }
+  props: ['images']
 }
 </script>
 
