@@ -52,7 +52,7 @@
         <v-card flat class="transparent">
           <v-card-text class="text-center">
             <v-icon x-large class="blue--text text--lighten-2">
-              mdi-palette
+              mdi-chart-bar
             </v-icon>
           </v-card-text>
           <v-card-title primary-title class="layout justify-center">
@@ -73,7 +73,7 @@
         <v-card flat class="transparent">
           <v-card-text class="text-center">
             <v-icon x-large class="blue--text text--lighten-2">
-              mdi-flash
+              mdi-teach
             </v-icon>
           </v-card-text>
           <v-card-title primary-title class="layout justify-center">
@@ -148,7 +148,7 @@
         <v-card flat class="transparent">
           <v-card-text class="text-center">
             <v-icon x-large class="blue--text text--lighten-2">
-              mdi-palette
+              mdi-monitor-cellphone
             </v-icon>
           </v-card-text>
           <v-card-title primary-title class="layout justify-center">
@@ -170,7 +170,7 @@
         <v-card flat class="transparent">
           <v-card-text class="text-center">
             <v-icon x-large class="blue--text text--lighten-2">
-              mdi-flash
+              mdi-account-group
             </v-icon>
           </v-card-text>
           <v-card-title primary-title class="layout justify-center">
@@ -192,17 +192,22 @@
         <v-card flat class="transparent">
           <v-card-text class="text-center">
             <v-icon x-large class="blue--text text--lighten-2">
-              mdi-wrench
+              mdi-web
+            </v-icon>
+            <v-icon x-large class="blue--text text--lighten-2">
+              mdi-facebook
+            </v-icon>
+            <v-icon x-large class="blue--text text--lighten-2">
+              mdi-twitter
             </v-icon>
           </v-card-text>
           <v-card-title primary-title class="layout justify-center">
             <div class="headline text-center">
-              Facebook ページ
+              情報発信
             </div>
           </v-card-title>
           <v-card-text>
-            Code for
-            Universityの活動やイベントを載せているFacebookページ。
+            大学に関わる新しい情報の他、Code for Universityの活動を発信しています。
             活動に興味のある方・アプリの宣伝・イベントについての質問などなどお気軽にご連絡ください！！
           </v-card-text>
         </v-card>
