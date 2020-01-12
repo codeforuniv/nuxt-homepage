@@ -1,6 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar :clipped-left="clipped" class="clear" fixed app>
+    <v-app-bar
+      :clipped-left="clipped"
+      class="clear"
+      fixed
+      app
+    >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <a href="/">
         <img src="/logo-wide.png" width="160px">
@@ -8,7 +13,6 @@
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
       app
@@ -55,7 +59,7 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-alien-outline',
+          icon: 'mdi-newspaper-variant',
           title: 'News',
           to: '/news'
         },
@@ -66,11 +70,10 @@ export default {
         },
         {
           icon: 'mdi-file-edit',
-          title: 'Ideas',
+          title: 'Ideathon',
           to: '/ideas'
         }
       ],
-      miniVariant: false,
       title: 'Vuetify.js'
     }
   }
