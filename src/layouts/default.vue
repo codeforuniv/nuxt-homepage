@@ -1,22 +1,12 @@
 <template>
   <v-app>
-    <v-app-bar
-      :clipped-left="clipped"
-      class="clear"
-      fixed
-      app
-    >
+    <v-app-bar :clipped-left="clipped" class="clear" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <a href="/">
-        <img src="/logo-wide.png" width="160px">
+        <img src="/logo-wide.png" width="160px" />
       </a>
     </v-app-bar>
-    <v-navigation-drawer
-      v-model="drawer"
-      :clipped="clipped"
-      fixed
-      app
-    >
+    <v-navigation-drawer v-model="drawer" :clipped="clipped" fixed app>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -34,7 +24,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-content>
+    <v-main>
       <v-container class="pa-0" fluid>
         <nuxt />
       </v-container>
@@ -51,8 +41,18 @@
                 Twitter
               </v-row>
               <v-row class="justify-center">
-                <a class="twitter-timeline" data-width="400" data-height="300" href="https://twitter.com/codeforuniv?ref_src=twsrc%5Etfw">Tweets by codeforuniv</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
+                <a
+                  class="twitter-timeline"
+                  data-width="400"
+                  data-height="300"
+                  href="https://twitter.com/codeforuniv?ref_src=twsrc%5Etfw"
+                  >Tweets by codeforuniv</a
+                >
+                <script
+                  async
+                  src="https://platform.twitter.com/widgets.js"
+                  charset="utf-8"
+                />
               </v-row>
             </v-col>
             <v-col cols="12" md="4" class="text-left">
@@ -84,7 +84,9 @@
                   <v-list-item href="https://twitter.com/codeforuniv">
                     Twitter: @codeforuniv
                   </v-list-item>
-                  <v-list-item href="https://www.facebook.com/Code-for-University-103516374334392">
+                  <v-list-item
+                    href="https://www.facebook.com/Code-for-University-103516374334392"
+                  >
                     Facebook: Code for University
                   </v-list-item>
                 </v-list>
@@ -93,23 +95,31 @@
           </v-row>
 
           <v-card-text class="white--text pt-0">
-            Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
+            Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
+            accumsan id ultrices nunc. Sed at orci sed massa consectetur
+            dignissim a sit amet dui. Duis commodo vitae velit et faucibus.
+            Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum
+            ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel
+            diam elementum tempor vel ut orci. Orci varius natoque penatibus et
+            magnis dis parturient montes, nascetur ridiculus mus.
           </v-card-text>
 
           <v-divider />
 
           <v-card-text class="white--text">
-            {{ new Date().getFullYear() }} — <strong>Code for University.</strong>
+            {{ new Date().getFullYear() }} —
+            <strong>Code for University.</strong>
           </v-card-text>
         </v-card>
       </v-footer>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       clipped: false,
       drawer: false,

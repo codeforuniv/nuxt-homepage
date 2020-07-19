@@ -11,6 +11,8 @@ module.exports = {
   extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
   // add your custom rules here
   rules: {
-    'space-before-function-paren': 0
+    'space-before-function-paren': 0,
+    'vue/html-self-closing': 'off',
+    'vue/html-closing-bracket-newline': 'off'
   }
 }

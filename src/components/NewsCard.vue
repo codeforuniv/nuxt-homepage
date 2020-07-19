@@ -1,28 +1,18 @@
 <template>
   <v-hover v-slot:default="{ hover }">
-    <v-card
-      :elevation="hover ? 12 : 2"
-      class="mx-auto"
-    >
-      <v-img
-        :src="post.images[0]"
-        class="white--text align-end"
-        height="200px"
-      >
-        <div
-          class="news-title"
-          style="height: 30%"
-        >
-          <v-card-title>{{ post.title }}</v-card-title>
+    <v-card :elevation="hover ? 12 : 2" class="mx-auto">
+      <v-img :src="news.imageUrl" class="white--text align-end" height="200px">
+        <div class="news-title" style="height: 30%">
+          <v-card-title>{{ news.title }}</v-card-title>
         </div>
       </v-img>
 
       <v-card-subtitle>
-        {{ post.eventDate.toDate() }}
+        {{ news.date }}
       </v-card-subtitle>
 
       <v-card-text class="text--primary">
-        {{ post.content }}
+        {{ news.content }}
       </v-card-text>
       <v-card-actions>
         <v-btn color="orange" text>
@@ -40,13 +30,13 @@
 <script>
 export default {
   props: {
-    'post': {
+    news: {
       type: Object,
-      'default': () => ({
+      default: () => ({
         title: '',
-        images: [],
+        imageUrl: '',
         content: '',
-        eventDate: Date()
+        date: Date()
       })
     }
   }
