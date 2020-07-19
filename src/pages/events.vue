@@ -1,11 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col
-        v-for="(post, index) in events"
-        :key="index"
-        sm="6"
-      >
+      <v-col v-for="(post, index) in events" :key="index" sm="6">
         <NewsCard :post="post" />
         <!-- <v-card
           class="mx-auto"
@@ -102,7 +98,7 @@ export default {
       events: 'events/events'
     })
   },
-  created () {
+  created() {
     this.init()
   },
   methods: {

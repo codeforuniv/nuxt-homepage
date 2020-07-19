@@ -43,7 +43,6 @@
               <v-card-title v-text="content.title" class="headline" />
               <v-divider />
               <v-spacer />
-              <!-- <v-card-subtitle v-text="content.artist" white-space:pre-wrap word-wrap:break-word></v-card-subtitle> -->
               <v-img :src="content.src" />
               <v-dialog v-model="content.dialog" max-width="1200px">
                 <v-card class="grey fluid">
