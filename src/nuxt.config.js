@@ -1,6 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
-const { MICROCMS_API_KEY } = process.env
+const { MICROCMS_API_KEY, MICROCMS_BASE_URL } = process.env
 
 export default {
   mode: 'spa',
@@ -89,5 +89,6 @@ export default {
   },
   env: {
     MICROCMS_API_KEY,
+    MICROCMS_BASE_URL,
   },
 }

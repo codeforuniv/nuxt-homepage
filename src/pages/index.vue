@@ -34,13 +34,13 @@
 
     <v-row>
       <v-col
-        v-for="(news, index) in newss"
+        v-for="(post, index) in posts"
         :key="index"
         cols="12"
         md="4"
         class="my-4"
       >
-        <NewsCard :news="news" />
+        <NewsCard :post="post" />
       </v-col>
     </v-row>
 
@@ -159,7 +159,6 @@
 
 <script>
 import axios from 'axios'
-import { mapGetters, mapActions } from 'vuex'
 import Carousel from '@/components/Carousel.vue'
 import NewsCard from '@/components/NewsCard.vue'
 
@@ -171,36 +170,25 @@ export default {
   },
   data() {
     return {
-      // 取得したデータを入れる
-      newss: []
+      posts: [],
+      images: []
     }
-  },
-  computed: {
-    ...mapGetters({
-      posts: 'news/posts',
-      images: 'images/images'
-    })
   },
   async asyncData() {
-    const { data } = await axios.get(
-      'https://code4univ.microcms.io/api/v1/news',
-      {
-        headers: { 'X-API-KEY': process.env.MICROCMS_API_KEY }
+    const myHttpClient = axios.create({
+      baseURL: process.env.MICROCMS_BASE_URL,
+      headers: {
+        'X-API-KEY': process.env.MICROCMS_API_KEY
       }
-    )
-    return {
-      newss: data.contents
-    }
-  },
-  created() {
-    this.initNews()
-    this.initImages()
-  },
-  methods: {
-    ...mapActions({
-      initNews: 'news/init',
-      initImages: 'images/init'
     })
+    const [carouselData, newsData] = await Promise.all([
+      myHttpClient.get('carousel_images'),
+      myHttpClient.get('news')
+    ])
+    return {
+      images: carouselData.data.contents,
+      posts: newsData.data.contents
+    }
   }
 }
 </script>

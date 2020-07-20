@@ -131,11 +131,6 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-newspaper-variant',
-          title: 'News',
-          to: '/news'
-        },
-        {
           icon: 'mdi-animation',
           title: 'Apps',
           to: '/apps'
