@@ -1,12 +1,16 @@
-version: '3'
+version: "3"
 services:
-  web:
-    build: ./app
-    ports:
-      - 3000:3000
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
     volumes:
-      - ./app:/app
-      - /app/node_modules #node_modulesはホストのディレクトリにマウントさせない https://github.com/sass/node-sass/issues/2165#issuecomment-347043659
-    command: ash -c "npm install && npm run dev"
-    stdin_open: true
-    tty: true
+      - "./src/:/app/"
+      # - "./src/node_modules:/app/node_modules"
+    ports:
+      - "3000:3000"
+    command: npm run dev
+
+volumes:
+  node_modules:
+    driver: local
