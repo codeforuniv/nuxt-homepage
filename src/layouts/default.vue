@@ -129,11 +129,6 @@ export default {
           icon: 'mdi-file-edit',
           title: 'Ideathon',
           to: '/ideas'
-        },
-        {
-          icon: 'mdi-contactless-payment',
-          title: 'Contact',
-          to: '/contact'
         }
       ]
     }
