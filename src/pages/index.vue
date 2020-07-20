@@ -34,7 +34,7 @@
 
     <v-row>
       <v-col
-        v-for="(post, index) in posts"
+        v-for="(post, index) in news"
         :key="index"
         cols="12"
         md="4"
@@ -48,71 +48,19 @@
 
     <v-row class="my-12">
       <v-col class="text-center">
-        <h2>Code for Universityの主な活動</h2>
+        <h2>ACTIVITIES</h2>
       </v-col>
     </v-row>
 
-    <v-row class="my-12">
-      <v-col cols="12" md="4" class="my-4">
-        <v-card flat class="transparent">
-          <v-card-text class="text-center">
-            <v-icon x-large class="blue--text text--lighten-2">
-              mdi-monitor-cellphone
-            </v-icon>
-          </v-card-text>
-          <v-card-title primary-title class="layout justify-center">
-            <div class="headline text-center">
-              アプリ開発支援
-            </div>
-          </v-card-title>
-          <v-card-text>
-            大学の「研究・教育・社会貢献」を支援するアプリケーションの開発を行っています。
-            個人開発やハッカソンを通じて、皆さんの思いをアプリにして実装しています。
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="4" class="my-4">
-        <v-card flat class="transparent">
-          <v-card-text class="text-center">
-            <v-icon x-large class="blue--text text--lighten-2">
-              mdi-account-group
-            </v-icon>
-          </v-card-text>
-          <v-card-title primary-title class="layout justify-center">
-            <div class="headline">
-              イベント開催
-            </div>
-          </v-card-title>
-          <v-card-text>
-            大学×シビックテックの実現する形として、イベントを開催しています。
-            院生や研究者、行政の方などその時々でフォーカスを変えながら、大学のより良い活用方法について議論しています。
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="4" class="my-4">
-        <v-card flat class="transparent">
-          <v-card-text class="text-center">
-            <v-icon x-large class="blue--text text--lighten-2">
-              mdi-web
-            </v-icon>
-            <v-icon x-large class="blue--text text--lighten-2">
-              mdi-facebook
-            </v-icon>
-            <v-icon x-large class="blue--text text--lighten-2">
-              mdi-twitter
-            </v-icon>
-          </v-card-text>
-          <v-card-title primary-title class="layout justify-center">
-            <div class="headline text-center">
-              情報発信
-            </div>
-          </v-card-title>
-          <v-card-text>
-            大学に関わる新しい情報の他、Code for
-            Universityの活動を発信しています。
-            活動に興味のある方・アプリの宣伝・イベントについての質問などなどお気軽にご連絡ください！！
-          </v-card-text>
-        </v-card>
+    <v-row>
+      <v-col
+        v-for="(post, index) in projects"
+        :key="index"
+        cols="12"
+        md="4"
+        class="my-4"
+      >
+        <ProjectCard :post="post" />
       </v-col>
     </v-row>
 
@@ -161,17 +109,20 @@
 import axios from 'axios'
 import Carousel from '@/components/Carousel.vue'
 import NewsCard from '@/components/NewsCard.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
 
 export default {
   name: 'Home',
   components: {
     Carousel,
-    NewsCard
+    NewsCard,
+    ProjectCard
   },
   data() {
     return {
-      posts: [],
-      images: []
+      news: [],
+      images: [],
+      projects: []
     }
   },
   async asyncData() {
@@ -181,13 +132,15 @@ export default {
         'X-API-KEY': process.env.MICROCMS_API_KEY
       }
     })
-    const [carouselData, newsData] = await Promise.all([
+    const [carouselData, newsData, projectData] = await Promise.all([
       myHttpClient.get('carousel_images'),
-      myHttpClient.get('news')
+      myHttpClient.get('news'),
+      myHttpClient.get('projects')
     ])
     return {
       images: carouselData.data.contents,
-      posts: newsData.data.contents
+      news: newsData.data.contents,
+      projects: projectData.data.contents
     }
   }
 }
