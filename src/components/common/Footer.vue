@@ -15,7 +15,7 @@
           <v-row class="px-2 justify-center">
             <a
               class="twitter-timeline"
-              data-width="500"
+              data-width="400"
               data-height="300"
               href="https://twitter.com/codeforuniv?ref_src=twsrc%5Etfw"
               >Tweets by codeforuniv</a
@@ -33,9 +33,10 @@
           </v-row>
           <v-row class="px-2 justify-center">
             <iframe
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCode-for-University-103516374334392%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-              width="500"
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCode-for-University-103516374334392%2F&tabs=timeline&width=400&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+              width="400"
               height="300"
+              align="middle"
               style="border:none;overflow:hidden"
               scrolling="no"
               frameborder="0"
