@@ -35,7 +35,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/firebase'],
+  plugins: ['~/plugins/firebase', '~/plugins/moment.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -51,6 +51,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/moment',
   ],
   /*
    ** Axios module configuration

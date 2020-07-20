@@ -12,7 +12,7 @@
       </v-img>
 
       <v-card-subtitle>
-        {{ post.date }}
+        {{ post.date | formatDate }}
       </v-card-subtitle>
 
       <v-card-text class="text--primary">
