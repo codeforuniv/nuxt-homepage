@@ -108,6 +108,20 @@ export default {
       projects: []
     }
   },
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://platform.twitter.com/widgets.js',
+          body: true
+        },
+        {
+          src: 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v7.0',
+          body: true
+        }
+      ]
+    }
+  },
   async asyncData() {
     const myHttpClient = axios.create({
       baseURL: process.env.MICROCMS_BASE_URL,
