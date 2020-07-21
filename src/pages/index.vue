@@ -12,10 +12,10 @@
         </v-row>
         <v-row class="justify-center my-4">
           <v-col cols="12">
-            世界中の知の拠点となっている大学。<br />
-            その大学は今、時代に押し流されている。<br />
-            僕たちの力で明日の大学をデザインしよう。<br />
-            一人一人の思いを形にしていこう。
+            世界中の知の拠点となっている大学。
+            <br />その大学は今、時代に押し流されている。
+            <br />僕たちの力で明日の大学をデザインしよう。
+            <br />一人一人の思いを形にしていこう。
           </v-col>
         </v-row>
       </v-col>
@@ -72,15 +72,17 @@
       </v-col>
     </v-row>
     <v-row class="justify-center my-12">
-      <v-col class="text-center">
+      <v-col class="text-center" cols="10" md="8">
         大学の目的には「研究・教育・社会貢献」の3つがあると言われています。
         しかし、高速で変化する世界の中で今の大学はこの3つの目的を果たすために様々な問題に直面しています。
         1つ1つの課題はとても大きく、1人の力では解決できないかもしれません。 Code
         for Universityは、そんな大学のために活動するすべての人を応援します。
         1人の力では解決できない課題も、誰かが動き始めることで繋がり、社会に広がっていきます。
         今あなたの頭の中にある思いを、Code for
-        Universityと一緒に形にしてみませんか？<br /><br />
-        Code for University代表 三浦 崇寛<br />
+        Universityと一緒に形にしてみませんか？
+        <br />
+        <br />Code for University代表 三浦 崇寛
+        <br />
       </v-col>
     </v-row>
   </v-container>
@@ -104,6 +106,20 @@ export default {
       news: [],
       images: [],
       projects: []
+    }
+  },
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://platform.twitter.com/widgets.js',
+          body: true
+        },
+        {
+          src: 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v7.0',
+          body: true
+        }
+      ]
     }
   },
   async asyncData() {

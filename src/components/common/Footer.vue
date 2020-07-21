@@ -9,9 +9,7 @@
     >
       <v-row>
         <v-col cols="12" md="4" class="text-left">
-          <v-row class="ma-2">
-            Twitter
-          </v-row>
+          <v-row class="ma-2">Twitter</v-row>
           <v-row class="px-2 justify-center">
             <a
               class="twitter-timeline"
@@ -20,38 +18,29 @@
               href="https://twitter.com/codeforuniv?ref_src=twsrc%5Etfw"
               >Tweets by codeforuniv</a
             >
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-              charset="utf-8"
-            />
           </v-row>
         </v-col>
         <v-col cols="12" md="4" class="text-left">
-          <v-row class="ma-2">
-            Facebook
-          </v-row>
-          <v-row class="px-2 justify-center">
-            <iframe
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCode-for-University-103516374334392%2F&tabs=timeline&width=400&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-              width="400"
-              height="300"
-              align="middle"
-              style="border:none;overflow:hidden"
-              scrolling="no"
-              frameborder="0"
-              allowTransparency="true"
-              allow="encrypted-media"
-            ></iframe>
+          <v-row class="ma-2">Facebook</v-row>
+          <v-row class="mx-10 justify-center">
+            <div
+              class="fb-page"
+              data-href="https://www.facebook.com/Code-for-University-103516374334392/"
+              data-tabs="timeline,events,messages"
+              data-width=""
+              data-height="300"
+              data-small-header="true"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            ></div>
           </v-row>
         </v-col>
         <v-col cols="12" md="4" class="text-left">
-          <v-row class="ma-2">
-            Contact
-          </v-row>
+          <v-row class="ma-2">Contact</v-row>
           <v-row class="px-10 align-center">
             <v-list flat color="rgba(0,0,0,0)">
-              <v-list-item class="white--text">
+              <v-list-item>
                 Email: code4univ@gmail.com
               </v-list-item>
               <v-list-item href="https://twitter.com/codeforuniv">
