@@ -33,7 +33,13 @@
     </v-row>
 
     <v-row>
-      <v-col v-for="(post, index) in news" :key="index" cols="12" md="4" class="my-4">
+      <v-col
+        v-for="(post, index) in news"
+        :key="index"
+        cols="12"
+        md="4"
+        class="my-4"
+      >
         <NewsCard :post="post" />
       </v-col>
     </v-row>
@@ -47,7 +53,13 @@
     </v-row>
 
     <v-row>
-      <v-col v-for="(post, index) in projects" :key="index" cols="12" md="4" class="my-4">
+      <v-col
+        v-for="(post, index) in projects"
+        :key="index"
+        cols="12"
+        md="4"
+        class="my-4"
+      >
         <ProjectCard :post="post" />
       </v-col>
     </v-row>

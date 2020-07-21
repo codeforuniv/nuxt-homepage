@@ -9,9 +9,7 @@
     >
       <v-row>
         <v-col cols="12" md="4" class="text-left">
-          <v-row class="ma-2">
-            Twitter
-          </v-row>
+          <v-row class="ma-2">Twitter</v-row>
           <v-row class="px-2 justify-center">
             <a
               class="twitter-timeline"
@@ -28,9 +26,7 @@
           </v-row>
         </v-col>
         <v-col cols="12" md="4" class="text-left">
-          <v-row class="ma-2">
-            Facebook
-          </v-row>
+          <v-row class="ma-2">Facebook</v-row>
           <v-row class="px-2 justify-center">
             <iframe
               src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCode-for-University-103516374334392%2F&tabs=timeline&width=400&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
@@ -40,15 +36,13 @@
               style="border:none;overflow:hidden"
               scrolling="no"
               frameborder="0"
-              allowTransparency="true"
+              allowtransparency="true"
               allow="encrypted-media"
             ></iframe>
           </v-row>
         </v-col>
         <v-col cols="12" md="4" class="text-left">
-          <v-row class="ma-2">
-            Contact
-          </v-row>
+          <v-row class="ma-2">Contact</v-row>
           <v-row class="px-10 align-center">
             <v-list flat color="rgba(0,0,0,0)">
               <v-list-item class="white--text">
