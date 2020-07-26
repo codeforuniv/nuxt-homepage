@@ -1,14 +1,18 @@
 <template>
   <v-hover v-slot:default="{ hover }">
-    <v-card :elevation="hover ? 12 : 2" class="mx-auto" height="100%">
+    <v-card
+      :elevation="hover ? 12 : 2"
+      class="mx-auto"
+      height="100%"
+      :href="post.appUrl"
+      target="_blank"
+    >
       <v-img :src="post.image.url" class="white--text align-end" height="200px">
         <div class="post-title" style="height: 30%">
           <v-card-title>{{ post.title }}</v-card-title>
         </div>
       </v-img>
-      <v-card-text class="text--primary">
-        {{ post.content }}
-      </v-card-text>
+      <v-card-text class="text--primary">{{ post.content }}</v-card-text>
     </v-card>
   </v-hover>
 </template>
@@ -21,7 +25,8 @@ export default {
       default: () => ({
         title: '',
         image: '',
-        content: ''
+        content: '',
+        appUrl: ''
       })
     }
   }
