@@ -2,9 +2,9 @@
   <v-hover v-slot:default="{ hover }">
     <v-card
       :elevation="hover ? 12 : 2"
+      :href="post.appUrl"
       class="mx-auto"
       height="100%"
-      :href="post.appUrl"
       target="_blank"
     >
       <v-img :src="post.image.url" class="white--text align-end" height="200px">
